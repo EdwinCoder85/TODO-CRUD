@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import db from '../utils/database.js';
 
-const Todo = db.define('todos', {
+const Todo = db.define('todos', { // ! 'todos' es el nombre de la tabla en PostGress
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -17,6 +17,7 @@ const Todo = db.define('todos', {
   },
   completed: {
     type: DataTypes.BOOLEAN,
+    defaultValue: false,
     allowNull: false,
   }
 });
